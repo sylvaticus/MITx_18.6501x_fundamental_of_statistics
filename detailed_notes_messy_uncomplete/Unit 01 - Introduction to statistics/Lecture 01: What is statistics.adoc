@@ -1,0 +1,126 @@
+= Lecture 01: What is statistics
+
+== 01.01 Motivation
+== 01.02 What is statistics
+== 01.03 Overall goal of this course
+== 01.04 Why statistics
+== 01.05 Statistics, Data science, and Probability
+
+== 01.06 Statistics and modelling
+
+What you need to do is to choose a plausible but simple
+process and maybe understand a little bit about the noise
+distribution.
+
+Sometimes you can be more accurate if you're not trying to understand the whole truth, but just simple aspects of the truth.
+Is the truth red or is the truth blue? That's a much simpler question than, what is shape is the truth?
+
+== 01.07 About this course
+IDS 012 "Statistics and applications" - It uses R
+n -> across this course will be the number of points collected
+Good to "code" binomial outcomes as 0 and 1
+Question #1: Which is the minimum sample size that would give me a given assurance on the significance of my assertion ?
+It's very hard to find patients that want to go in a study where with 50% chances they're going to be given liquid sugar when they really want to be cured and try the actual drug.
+Question #2: Given this sample size, which is the number of observations "kiss on the right" we should get to be convinced that its proportion is more than 50% ?
+Question #3: Is the obtained 64.5% significantly higher than 50% ?
+An *estimator* is a formula: it's something before we substitute the numbers into the variables.
+Sample average: notation -> $\bar{R_n}$ (the bar really says I'm averaging the data that I have).
+
+*Accuracy* of the estimator:
+- how good is it ? It depends on n and on the true p, that we don't even know.
+- how close to the true p is it ?
+
+The estimator is also a random variable, being a function of random variables: every time I'm going to collect a new data set,
+I'm going to get a new number for p-hat.
+
+The estimate is a realisation of a random variable.
+
+Accuracy: this random variable will tend to take some values. Are the values it will tend to take, close to the value that I'm looking for, the true p ?
+But it will have some fluctuations. Those numbers change. How far do they fluctuate?
+
+== 01.08 Let's do some statistics
+
+== 01.09 The first example: modelling assumptions
+
+r.v. -> "random variable"
+"Ber" -> "Bernulli" distribution/random variable
+R_i -> the observation
+P(a & b) = P(a) *P(b) only if a and b are independent!
+If I have dependent random variables, I'm going to have to model their dependence. And this is really complicated.
+We use law of large numbers, requires independent random variables.
+We use central limit theorem, requires independent random variables.
+We're going to use some variance equalities, require independent random variables.
+Time series of stock data, from day to day this is not an independent process. You have to actually model the dependence.
+Identically distributed r.v.:
+
+I could have a different parameter for each of the Ri's.
+It could be that each couple has their own tendency to turn their head to the right or to the left.
+It could be the case, right?
+It could be that they're completely different.
+But here, we're actually assuming that they're drawn from the same population.
+And so everything we don't understand about those couples, and we don't have extra data about this person is left handed or right handed, thatprevents us from makin g more refined modeling assumptions.
+So we have to go with this p is the same for everyone.
+Because if we had extra data, then we could ask more refined questions.
+Is the p for left handed better than the p for right handed?
+We could ask do left handed people turn their head to the right more than right handed.
+
+
+== 01.10 Population versus samples
+
+What statistics is about is to say, which one is the most likely histogram to have generated the data that I actually see?
+So now you have only one point and you have to place it in one of those histograms.
+And you have to decide which one is the best.
+
+Probability theory vs Monte-Carlo simulation:
+
+This was a pure probability question.
+It said, here is p, which is equal to 35%.
+You know everything you need to know about this random process.
+And then you said, draw 1,000 time samples of size 124 from this population of size 5,000.
+Probability should tell you exactly what you need to know.
+It will tell you exactly the probabilitythat yo u see something larger than 0.36.
+It will tell you exactly the probability of you seeing something falling in this particular bin.
+It will tell you exactly what the expected value is.
+It will tell you what the standard deviation is.
+It will tell you everything.
+So rather than going through a computer, where I will always have a too small number of data, right?
+Because here, I am doing it only 1,000 times, but I should actually do it more and more.
+Than what I wanted is to actually understand how to use probability to compute exactly what I expect to see.
+
+Statistical questions on an estimator:
+
+- The first one is, what is the expected value of p hat
+- The second one is how close it is to the true p? How accurate is this estimator.
+
+So those are two different questions.
+What is it and how close it is from p.
+So one is about, what is e of the expectation of p hat.
+The other one is what is the expectation of p-hat minus p absolute value.
+
+- which is p-hat
+- is the expected value of p-hat close to p ?
+- does p-hat takes values close to p with high-probability
+- is the variance of p-hat large ?
+
+e.g.
+- what is the probability that p hat is away from p by more than 10% ? $P(| \bar R_n - p | > 0.1)$
+- what is the standard deviation, or the variance, of p-hat? $Var(\bar R_n)$
+
+==> We'll not be able to answer them exactly, but we're going to be able to answer them approximately as the sample sizes become larger.
+
+
+Notation: Where this little p hat comes from is, because I started with a true parameter p that I want to estimate.
+And then I say, oh, estimate this with p hat.
+So I put a hat on everything that's the estimator of something.
+
+Random variables are capital letters..
+
+The random variables that arise a lot in statistics,
+is the average.
+You need to understand averages of random variables.
+And averages of random variables are essentially controlled by two major tools: one is the law of large number and the other one is the central limit theorem.
+
+Those are the things that will tell us the approximate distribution of those things.
+And they tend to organize themselves pretty well.
+
+Averages of random variable will be the section of probability in which we're going to be zooming in quite a bit.

@@ -1,0 +1,18 @@
+= Lecture 01 - Introduction to Statistics =
+Ex name "Statistics for application"
+
+No statistics before, but probability yes
+
+How much sure I can be of my predictions concerning a statistical method. How to build error bars.
+
+
+Calling a drug "effective" is not in mathematical terms. I need e.g. the metrics
+
+Reccomended book: All of Statistics: A Concise Course in Statistical Inference (Springer Texts in Statistics) by Larry Wasserman
+
+"Study finds" the keyword
+
+1 study wrong over 20 on average
+
+Dead Salmon study
+
